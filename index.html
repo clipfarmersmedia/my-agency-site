@@ -3,48 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clip Farmers Media</title>
+<title>Clip Farmers Media | Short-Form Content That Grows Your Business</title>
+<meta name="description" content="Clip Farmers Media films, edits and delivers short-form video for businesses and creators in New Jersey and New York City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Clip Farmers Media</h1>
-  <p>Short-form content that grows your business</p> <!-- CHANGE THIS -->
+<nav class="nav" id="nav">
+  <a href="#top" class="brand">
+    <!-- LOGO: upload a file named logo.png to your GitHub repo and it will appear here automatically -->
+    <img src="logo.png" alt="Clip Farmers Media logo" class="logo-img" onerror="this.style.display='none'">
+    <span>Clip Farmers Media</span>
+  </a>
+  <div class="nav-links">
+    <a href="#about">What We Do</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <p class="eyebrow">Short-form video agency &middot; NJ &amp; NYC</p>
+  <h1>Content that <span class="grad">grows</span> your business.</h1>
+  <p class="lead">We come to you, film it, edit it, and deliver scroll-stopping short-form videos ready to post.</p>
+  <div class="hero-buttons">
+    <a href="#pricing" class="btn btn-primary">See Pricing</a>
+    <a href="#contact" class="btn btn-ghost">Contact Us</a>
+  </div>
 </header>
 
-<section id="about">
-  <h2>What We Do</h2>
-  <p>We film and edit short-form video content for businesses and creators in the New Jersey and New York City area, then deliver it ready to post.</p> <!-- CHANGE THIS -->
-</section>
-
-<section id="pricing">
-  <h2>Packages</h2>
-  <div class="tier">
-    <h3>Starter</h3>
-    <p class="price">$1000/month</p>
-    <p>20 videos per month</p>
-  </div>
-  <div class="tier">
-    <h3>Growth</h3>
-    <p class="price">$1,500/month</p>
-    <p>One in-person filming day, 20-30 videos, posting included</p>
-  </div>
-  <div class="tier">
-    <h3>Executive</h3>
-    <p class="price">$2,000+/month</p> <!-- CHANGE THIS -->
-    <p>Multiple filming sessions, full account management, strategy</p>
+<section id="about" class="section">
+  <h2>What we do</h2>
+  <p class="section-sub">Everything you need to show up on social, handled start to finish.</p>
+  <div class="feature-grid">
+    <div class="feature reveal">
+      <div class="icon">🎬</div>
+      <h3>Onsite filming</h3>
+      <p>We travel to your location across New Jersey and New York City and capture the content in person.</p>
+    </div>
+    <div class="feature reveal">
+      <div class="icon">✂️</div>
+      <h3>Expert editing</h3>
+      <p>Fast-paced, platform-ready edits built for TikTok, Instagram Reels and YouTube Shorts.</p>
+    </div>
+    <div class="feature reveal">
+      <div class="icon">🚀</div>
+      <h3>Built to grow</h3>
+      <p>Content designed around what gets watched, shared and remembered, so your audience keeps growing.</p>
+    </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Get In Touch</h2>
-  <p>Email: youremail@example.com</p>
-  <p>Phone: 555-555-5555</p>
+<section id="pricing" class="section section-tint">
+  <h2>Choose your tier</h2>
+  <p class="section-sub">Simple monthly plans. Compare side by side and pick what fits.</p>
+
+  <div class="compare">
+
+    <!-- SILVER -->
+    <div class="plan reveal">
+      <h3 class="plan-name silver">Silver Tier</h3>
+      <p class="plan-price">$1,000<span>/month</span></p>
+      <a href="#contact" class="btn btn-outline">Get Silver</a>
+      <ul class="rows">
+        <li><span class="label">Videos</span><span class="value">20 per month</span></li>
+        <li><span class="label">Revisions</span><span class="value">1 per video</span></li>
+        <li><span class="label">Onsite filming &amp; production</span><span class="value yes">✓</span></li>
+        <li><span class="label">Custom videos</span><span class="value no">&ndash;</span></li>
+        <li><span class="label">Full social media management</span><span class="value no">&ndash;</span></li>
+        <li><span class="label">Monthly strategy meetings</span><span class="value no">&ndash;</span></li>
+      </ul>
+    </div>
+
+    <!-- GOLD -->
+    <div class="plan popular reveal">
+      <span class="badge">Most Popular</span>
+      <h3 class="plan-name gold">Gold Tier</h3>
+      <p class="plan-price">$1,500<span>/month</span></p>
+      <a href="#contact" class="btn btn-primary">Get Gold</a>
+      <ul class="rows">
+        <li><span class="label">Videos</span><span class="value">25 per month</span></li>
+        <li><span class="label">Revisions</span><span class="value">2 per video</span></li>
+        <li><span class="label">Onsite filming &amp; production</span><span class="value yes">✓</span></li>
+        <li><span class="label">Custom videos</span><span class="value yes">✓</span></li>
+        <li><span class="label">Full social media management</span><span class="value no">&ndash;</span></li>
+        <li><span class="label">Monthly strategy meetings</span><span class="value no">&ndash;</span></li>
+      </ul>
+    </div>
+
+    <!-- DIAMOND -->
+    <div class="plan reveal">
+      <h3 class="plan-name diamond">Diamond Tier</h3>
+      <p class="plan-price">$2,000<span>/month</span></p>
+      <a href="#contact" class="btn btn-outline">Get Diamond</a>
+      <ul class="rows">
+        <li><span class="label">Videos</span><span class="value">1 per day</span></li>
+        <li><span class="label">Revisions</span><span class="value">Unlimited</span></li>
+        <li><span class="label">Onsite filming &amp; production</span><span class="value yes">✓</span></li>
+        <li><span class="label">Custom videos</span><span class="value yes">✓</span></li>
+        <li><span class="label">Full social media management</span><span class="value yes">✓</span></li>
+        <li><span class="label">Monthly strategy meetings</span><span class="value yes">✓</span></li>
+      </ul>
+    </div>
+
+  </div>
+  <p class="fine-print">Custom videos are one-off pieces such as promoting a sale or a new product.</p>
+</section>
+
+<section id="contact" class="section contact">
+  <h2>Let's get you growing</h2>
+  <p class="section-sub">Tell us about your business and we'll recommend the right tier.</p>
+  <div class="contact-card">
+    <p><strong>Email</strong><br><a href="mailto:youremail@example.com">youremail@example.com</a></p> <!-- CHANGE THIS (appears twice: text and link) -->
+    <p><strong>Phone</strong><br><a href="tel:5555555555">555-555-5555</a></p> <!-- CHANGE THIS (appears twice: text and link) -->
+    <a href="mailto:youremail@example.com" class="btn btn-primary">Email Us</a> <!-- CHANGE THIS -->
+  </div>
 </section>
 
 <footer>
-  <p>&copy; 2026 Clip Farmers Media</p>
+  <p>&copy; <span id="year">2026</span> Clip Farmers Media. All rights reserved.</p>
 </footer>
 
 <script src="script.js"></script>
