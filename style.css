@@ -206,3 +206,79 @@ footer p { margin: 0 0 10px; }
   *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ===== PREMIUM SCROLL EFFECTS (added) ===== */
+.progress { position: fixed; top: 0; left: 0; height: 4px; width: 100%; z-index: 150; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--blue), var(--green)); box-shadow: 0 0 14px rgba(47, 203, 126, 0.6); }
+
+/* hero reacts to scroll (JS sets --hp from 0 to 1) */
+.hero-visual { translate: 0 calc(var(--hp, 0) * -70px); scale: calc(1 - var(--hp, 0) * 0.18); }
+.hero-copy { translate: 0 calc(var(--hp, 0) * 40px); opacity: calc(1 - var(--hp, 0) * 1.1); }
+.ring { scale: calc(1 + var(--hp, 0) * 0.25); }
+
+/* floating glass shapes that drift and rotate as you scroll */
+.section { position: relative; }
+.section > :not(.shape) { position: relative; z-index: 1; }
+.section-tint > .shape { margin: 0; max-width: none; }
+.shape { position: absolute; z-index: 0; border-radius: 32px; pointer-events: none; will-change: translate, rotate;
+  background: linear-gradient(135deg, rgba(91, 188, 242, 0.38), rgba(47, 203, 126, 0.24));
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 20px 50px rgba(15, 27, 45, 0.1), inset 0 1px 0 #fff;
+  animation: floaty 9s ease-in-out infinite; }
+.s1 { width: 160px; height: 160px; top: 30px; left: -50px; }
+.s2 { width: 90px; height: 90px; top: 220px; right: -20px; border-radius: 50%; animation-delay: -3s; }
+.s3 { width: 140px; height: 140px; top: 40px; left: 2%; }
+.s4 { width: 100px; height: 100px; bottom: 90px; right: 3%; border-radius: 50%; animation-delay: -4s; }
+.s5 { width: 130px; height: 130px; top: 60px; right: 4%; animation-delay: -2s; }
+
+/* richer reveal: rise, scale and un-blur */
+.js .reveal { opacity: 0; transform: translateY(44px) scale(0.96); filter: blur(6px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.9s ease; }
+.js .reveal.visible { opacity: 1; transform: none; filter: none; }
+
+/* 3D tilt + pointer glow on glass cards */
+.compare, .feature-grid { perspective: 1200px; }
+.feature { position: relative; }
+.tilt::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 0.3s;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, 0.7), transparent 60%); }
+.tilt:hover::before { opacity: 1; }
+
+/* How it works timeline: the line fills as you scroll */
+.timeline { position: relative; max-width: 760px; margin: 0 auto; padding-left: 56px; text-align: left; }
+.tl-track, .tl-fill { position: absolute; left: 19px; top: 12px; bottom: 12px; width: 4px; border-radius: 4px; }
+.tl-track { background: rgba(15, 27, 45, 0.1); }
+.tl-fill { background: linear-gradient(var(--blue), var(--green)); transform-origin: 50% 0; transform: scaleY(var(--tp, 0)); box-shadow: 0 0 14px rgba(47, 203, 126, 0.5); }
+.step { position: relative; border-radius: 22px; padding: 24px 26px; margin-bottom: 22px; transition: opacity 0.5s, transform 0.5s; }
+.js .step { opacity: 0.6; transform: translateX(18px) scale(0.98); }
+.js .step.on { opacity: 1; transform: none; }
+.step::before { content: attr(data-n); position: absolute; left: -56px; top: 20px; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; background: #fff; border: 2px solid rgba(15, 27, 45, 0.2); color: var(--muted); transition: all 0.4s; }
+.step.on::before { background: linear-gradient(135deg, var(--blue), var(--green)); border-color: #fff; color: var(--ink); box-shadow: 0 0 0 6px rgba(47, 203, 126, 0.18); }
+.step h3 { margin: 0 0 6px; font-size: 1.3rem; letter-spacing: -0.02em; }
+.step p { margin: 0; color: var(--muted); }
+
+/* pricing extras */
+.plan-price { margin-bottom: 12px; }
+.per { display: table; margin: 0 auto 22px; padding: 6px 16px; border-radius: 999px; background: rgba(47, 203, 126, 0.16); color: var(--green-d); font-weight: 700; font-size: 1.05rem; }
+.addon { max-width: 760px; margin: 36px auto 0; padding: 20px 26px; border-radius: 20px; }
+.addon p { margin: 0; color: var(--ink); }
+
+/* examples page */
+.page.wide { max-width: 1100px; }
+.page .card { border-radius: 24px; padding: 30px; margin-bottom: 24px; }
+.page .card h3 { margin: 0 0 8px; font-size: 1.4rem; color: var(--ink); }
+.page .card.center { text-align: center; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.two .card { margin-bottom: 0; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+.stat { background: rgba(255, 255, 255, 0.7); border: 1px solid #fff; border-radius: 18px; padding: 20px; text-align: center; }
+.stat span { display: block; font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; color: var(--green-d); }
+.stat small { color: var(--muted); font-size: 0.95rem; }
+
+@media (max-width: 900px) {
+  .two, .stats { grid-template-columns: 1fr; }
+  .timeline { padding-left: 50px; } .step::before { left: -50px; }
+  .shape { opacity: 0.6; transform: scale(0.7); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .step { opacity: 1; transform: none; filter: none; }
+  .hero-visual, .hero-copy, .ring { translate: none; scale: none; opacity: 1; }
+}
